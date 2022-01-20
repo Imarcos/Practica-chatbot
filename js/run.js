@@ -1,14 +1,14 @@
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
    
-    //iniciamos el parse
+    //initialize parse
     Parse.initialize(
         "6UWFMLoWnlezJ44ZfJwpnoENrlJRTOKVpR6pS7nk",
         "5IjUxwL1TElHCcKVkc1K3NwnJTnSSpRlVK7TVrNW"
       );
       Parse.serverURL = 'https://pg-app-2q6u5vo36uarcl0phkzy94tr14edtd.scalabl.cloud/1/';
           // the link to your model provided by Teachable Machine export panel
-          const URL = "https://teachablemachine.withgoogle.com/models/V-sO3E82U/";
+        const URL = "https://teachablemachine.withgoogle.com/models/_MlvaF8CF/";
           
           //declare variable and toggle the webcam button
           let model, webcam, newlabel, canvas, labelContainer, maxPredictions, camera_on = false, image_upload = false;
@@ -120,7 +120,7 @@
                   parseFile.save().then(async function () {
                       //The file has been saved to the Parse server
       
-                      img = new Image(224, 224);
+                      img = new Image(300, 300);
                       img.crossOrigin = "Anonymous";
                       img.addEventListener("load", getPredictions, false);
                       img.src = parseFile.url();
@@ -140,8 +140,8 @@
       
       canvas = document.createElement("canvas");
       var context = canvas.getContext("2d");
-      canvas.width = "224";
-      canvas.height = "224";
+      canvas.width = "300";
+      canvas.height = "300";
       context.drawImage(img, 0, 0);
       document.getElementById("uploadedImage").appendChild(canvas);
       
